@@ -71,4 +71,4 @@ message("Dendrogram saved in the output folder.")
 ### save the matrix, distance and hc object in the output folder ###
 files <- list(cluster_matrix = cluster_matrix, distance_matrix = d, hc = hc)
 saveRDS(files, file = "cluster_analysis_objects.RDS")
-message("Cluster analysis objects saved in the output folder."
+message("Cluster analysis objects saved in the output folder.")
