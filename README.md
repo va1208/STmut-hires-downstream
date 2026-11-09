@@ -106,7 +106,7 @@ This is the cluster file  used for STmut/clustering.
 Conceptually:
 
 ``` text
-Barcode,Cluster
+Barcode,Graph-based
 AAACAAGTATCTCCCA-1,Cluster 1
 AAACACCAATAACTGC-1,Cluster 1
 AAACAGAGCGACTCCT-1,Cluster 2
