@@ -443,37 +443,6 @@ The workflow will then additionally generate:
 sample01_reordered.cdt
 ```
 
-------------------------------------------------------------------------
-
-# Example directory structure
-
-``` text
-project/
-├── scripts/
-│   ├── cnv_cdt_clustering_updated.R
-│   └── reorder_cdt_file_hires.R
-│
-├── STmut_output/
-│   ├── CNVs_OrganizedByGEcluster_UMIcount.cdt
-│   └── BarcodeLegend.csv
-│
-├── metadata/
-│   ├── cluster_info.txt
-│   ├── cluster_annotation.txt
-│   └── ordering_cluster.txt
-│
-└── results/
-    ├── clustering/
-    │   ├── cluster_dendrogram.pdf
-    │   └── cluster_analysis_objects.RDS
-    │
-    ├── sample01_tumorclones_projection.csv
-    ├── sample01_reordered_heatmap.png
-    └── sample01_reordered.cdt
-```
-
-------------------------------------------------------------------------
-
 # Complete example
 
 ## 1. Cluster the CNV profiles
@@ -502,22 +471,22 @@ metadata/ordering_cluster.txt
 For example:
 
 ``` text
-Cluster4    tumor_clone1
-Cluster5    tumor_clone1
-Cluster6    tumor_clone1
-Cluster10   tumor_clone2
-Cluster12   tumor_clone2
-Cluster13   tumor_clone2
-Cluster14   tumor_clone3
-Cluster17   tumor_clone3
-Cluster8    tumor_clone4
-Cluster3    tumor_clone4
-Cluster7    tumor_clone5
-Cluster9    tumor_clone5
-Cluster16   tumor_clone6
-Cluster19   tumor_clone6
-Cluster20   tumor_clone7
-Cluster21   tumor_clone7
+Cluster4    tumor1
+Cluster5    tumor1
+Cluster6    tumor1
+Cluster10   tumor2
+Cluster12   tumor2
+Cluster13   tumor2
+Cluster14   tumor3
+Cluster17   tumor3
+Cluster8    tumor4
+Cluster3    tumor4
+Cluster7    tumor5
+Cluster9    tumor5
+Cluster16   tumor6
+Cluster19   tumor6
+Cluster20   tumor7
+Cluster21   tumor7
 Cluster22   normal
 Cluster23   normal
 ```
@@ -554,7 +523,7 @@ results/sample01_reordered.cdt
 -   Barcode names in the CDT file, barcode legend, and cluster
     assignment file must be consistent.
 -   Cluster names should contain a numeric cluster identifier such as
-    `Cluster4` or `cluster 4`; the reordering script extracts the
+    `Cluster 4` or `cluster 4`; the reordering script extracts the
     trailing cluster number.
 -   Every barcode used in the barcode legend must receive a valid
     annotation after merging with the cluster information. The script
