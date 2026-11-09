@@ -52,8 +52,27 @@ reorder_cdt_file_hires.R
 Run STmut using the appropriate inputs for your spatial transcriptomics
 dataset.
 
+Please follow the instruction given on this github page: https://github.com/limin321/stmut-hires
+
+For tissue postion file:
+visium/visium hd - use the tissue_positions.parquet file directly to run STmut (R package "arrow" can be used to generate the file)
+# Xenium
+Step1: use the cells.parqute file 
+Step2: load the file using arrow package and keep the following columns: "cell_id", "x_centroid", "y_centroid"
+Step3: change the column names to "barcode" "array_row" "array_col"
+
+Example:
+``` test
+library(arrow)
+tissue <- read_parquet("cells.parquet")
+tissue <- tissue[,c("cell_id", "x_centroid", "y_centroid")]
+colnames(tissue) <- c("barcode", "array_row", "array_col")
+write_parquet(tissue, "tissue_positions.parquet")
+```
+
 After STmut completes, retain the files needed for the downstream
 clustering and reordering steps.
+
 
 ## Required files
 
