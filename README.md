@@ -543,19 +543,9 @@ results/sample01_reordered.cdt
 
 -   Barcode names in the CDT file, barcode legend, and cluster
     assignment file must be consistent.
--   Cluster names should contain a numeric cluster identifier such as
-    `Cluster 4` or `cluster 4`; the reordering script extracts the
-    trailing cluster number.
 -   Every barcode used in the barcode legend must receive a valid
     annotation after merging with the cluster information. The script
-    stops if annotation values are missing.
--   Clusters not explicitly included in `ordering_cluster.txt` are
-    appended after the requested clusters in numeric order.
--   The current heatmap output is a 5000 × 5000 pixel PNG at 290 dpi.
--   Before running Step 2, check the final `message()` call in
-    `cnv_cdt_clustering_updated.R`. In the uploaded version, the closing
-    parenthesis appears to be missing. It should be:
-
+    stops if annotation values are missing
 ``` r
 message("Cluster analysis objects saved in the output folder.")
 ```
