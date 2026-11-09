@@ -58,7 +58,9 @@ For tissue postion file:
 visium/visium hd - use the tissue_positions.parquet file directly to run STmut (R package "arrow" can be used to generate the file)
 # Xenium
 Step1: use the cells.parqute file 
+
 Step2: load the file using arrow package and keep the following columns: "cell_id", "x_centroid", "y_centroid"
+
 Step3: change the column names to "barcode" "array_row" "array_col"
 
 Example:
