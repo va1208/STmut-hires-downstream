@@ -21,7 +21,7 @@ STmut
   |
   |-- CNV CDT file
   |-- BarcodeLegend file
-  |-- barcode/cluster assignment file
+  |-- cluster assignment file
   |-- cluster annotation file
   |
   v
@@ -73,55 +73,35 @@ represented as columns.
 Example:
 
 ``` text
-BarcodeLegend.csv
+cluster_barcode_summary.csv
 ```
 
 This file is used by `reorder_cdt_file_hires.R`.
 
-The script expects a column named:
-
-``` text
-main_barcode
-```
-
-which is internally renamed to `barcode`.
-
-The barcode legend is also expected to contain the `merged_barcodes`
-information used to generate the tumor-clone projection file.
-
 ### 3. Cluster assignment file
 
-This is the barcode-to-cluster assignment used for STmut/clustering.
+This is the cluster file  used for STmut/clustering.
 
 Conceptually:
 
 ``` text
-Barcode Cluster
-AAACAAGTATCTCCCA-1  Cluster1
-AAACACCAATAACTGC-1  Cluster1
-AAACAGAGCGACTCCT-1  Cluster2
-AAACAGCTTTCAGAAG-1  Cluster2
+Barcode,Cluster
+AAACAAGTATCTCCCA-1,Cluster 1
+AAACACCAATAACTGC-1,Cluster 1
+AAACAGAGCGACTCCT-1,Cluster 2
+AAACAGCTTTCAGAAG-1,Cluster 2
 ```
 
-The clustering script reads this file with a header and treats its two
-columns as:
-
-``` text
-Barcode
-Cluster
-```
-
-The reordering script also uses this barcode-to-cluster information.
 
 ### 4. Cluster annotation file
 
 The reordering script requires a cluster annotation table containing:
 
-``` text
-cluster annotate
-Cluster1    tumor
-Cluster2    tumor
-Cluster3    normal
+``` csv file
+cluster,annotate
+cluster1,tumor
+cluster2,tumor
+cluster3,normal
 ```
 
 The `annotate` values are used to organize the final heatmap and
